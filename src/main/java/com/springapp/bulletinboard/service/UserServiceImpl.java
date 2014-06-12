@@ -25,11 +25,6 @@ public class UserServiceImpl implements UserService {
     }
 
     @Transactional
-    public User findOne(Long id) {
-        return userDao.findOne(id);
-    }
-
-    @Transactional
     public void delete(Long id) {
         userDao.delete(id);
     }

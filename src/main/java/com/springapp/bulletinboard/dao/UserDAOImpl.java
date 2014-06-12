@@ -11,8 +11,6 @@ import java.util.List;
 @Repository
 public class UserDAOImpl implements UserDAO {
 
-    final static String GET_ONE_USER_QUERY = "SELECT u FROM users u WHERE u.id = :id";
-
     @Autowired
     private SessionFactory sessionFactory;
 
@@ -23,16 +21,6 @@ public class UserDAOImpl implements UserDAO {
     @SuppressWarnings("unchecked")
     public List<User> findAll() {
         return sessionFactory.getCurrentSession().createQuery("FROM users").list();
-    }
-
-    public User findOne(Long id) {
-        Query getOneUserQuery = sessionFactory.getCurrentSession().createQuery(GET_ONE_USER_QUERY).setParameter("id", id);
-        List<User> users = getOneUserQuery.list();
-        if (users.size() == 1) {
-            users.get(0);
-        }
-        // throw exception or smthng like that
-        return new User();
     }
 
     public void delete(Long id) {

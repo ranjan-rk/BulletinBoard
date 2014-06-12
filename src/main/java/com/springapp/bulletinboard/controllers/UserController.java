@@ -1,5 +1,6 @@
 package com.springapp.bulletinboard.controllers;
 
+import com.google.common.collect.Lists;
 import com.springapp.bulletinboard.User;
 import com.springapp.bulletinboard.service.UserService;
 import org.json.JSONArray;
@@ -19,7 +20,7 @@ public class UserController {
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String listUsers(ModelMap model) {
         model.addAttribute("user", new User());
-        model.addAttribute("roles", User.Role.values());
+        model.addAttribute("roles", Lists.newArrayList(User.Role.ADMINISTRATOR, User.Role.WRITER));
         model.addAttribute("users", userService.findAll());
         return "users";
     }
