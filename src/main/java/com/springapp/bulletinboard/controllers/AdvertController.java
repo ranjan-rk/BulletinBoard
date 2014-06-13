@@ -9,10 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class AdvertController {
@@ -32,6 +29,12 @@ public class AdvertController {
         return "redirect:/adverts";
     }
 
+    @RequestMapping(value = "/adverts/delete/{advertId}", method = RequestMethod.POST)
+    public String deleteAdvert(@PathVariable("advertId") Long advertId) {
+        advertService.delete(advertId);
+        return "redirect:/adverts";
+    }
+
     @RequestMapping(value = "/api/adverts", method = RequestMethod.GET)
     public
     @ResponseBody
@@ -42,6 +45,7 @@ public class AdvertController {
             advertJSON.put("id", ad.getId());
             advertJSON.put("title", ad.getTitle());
             advertJSON.put("text", ad.getText());
+            advertJSON.put("userName", ad.getUserName());
             advertJSON.put("timeStamp", ad.getTimeStamp());
             advertsArray.put(advertJSON);
         }
