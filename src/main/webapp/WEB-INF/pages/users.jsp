@@ -15,6 +15,9 @@
 </head>
 
 <body>
+
+<c:import url="navbar.jsp" />
+
 <div class="container">
     <h1>Users</h1>
     <form:form method="post" action="add" commandName="user" role="form">

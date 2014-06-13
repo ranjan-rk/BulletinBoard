@@ -15,6 +15,9 @@
 </head>
 
 <body>
+
+<c:import url="navbar.jsp" />
+
 <div class="container">
     <h1>Ads</h1>
     <form:form method="post" action="/adverts/add" commandName="advert" role="form">
