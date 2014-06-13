@@ -16,6 +16,9 @@ public class Advert {
     private String text;
 
     @Basic
+    private String userName;
+
+    @Basic
     private Date timeStamp;
 
     public Long getId() {
@@ -48,5 +51,13 @@ public class Advert {
 
     public void setTimeStamp(Date timeStamp) {
         this.timeStamp = timeStamp;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 }
