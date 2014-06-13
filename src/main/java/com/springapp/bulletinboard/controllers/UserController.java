@@ -17,7 +17,7 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping(value = "/users", method = RequestMethod.GET)
     public String listUsers(ModelMap model) {
         model.addAttribute("user", new User());
         model.addAttribute("roles", Lists.newArrayList(User.Role.ADMINISTRATOR, User.Role.WRITER));
@@ -42,13 +42,13 @@ public class UserController {
         return userArray.toString();
     }
 
-    @RequestMapping(value = "/add", method = RequestMethod.POST)
+    @RequestMapping(value = "/users/add", method = RequestMethod.POST)
     public String addUser(@ModelAttribute("user") User user, BindingResult result) {
         userService.save(user);
         return "redirect:/";
     }
 
-    @RequestMapping("/delete/{userId}")
+    @RequestMapping("/users/delete/{userId}")
     public String deleteUser(@PathVariable("userId") Long userId) {
         userService.delete(userId);
         return "redirect:/";

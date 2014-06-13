@@ -3,7 +3,7 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
 	http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
 
-	<display-name>Spring MVC Application</display-name>
+	<display-name>Bulletin Board Application</display-name>
 
     <!-- Описание корневого контейнера, разделяемого всеми сервлетами и фильтрами -->
     <context-param>
