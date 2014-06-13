@@ -1,7 +1,9 @@
 <web-app version="2.4"
-	xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
-	http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+     http://java.sun.com/xml/ns/j2ee
+	 http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
 
 	<display-name>Bulletin Board Application</display-name>
 
@@ -51,4 +53,15 @@
         <filter-name>charsetFilter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
+
+    <!-- фильтр безопасности, действующий на всё приложение -->
+    <filter>
+        <filter-name>springSecurityFilterChain</filter-name>
+        <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>springSecurityFilterChain</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
 </web-app>

@@ -20,7 +20,7 @@
 
 <div class="container">
     <h1>Users</h1>
-    <form:form method="post" action="add" commandName="user" role="form">
+    <form:form method="post" action="/users/add" commandName="user" role="form">
         <div class="form-group">
             <form:label path="firstName">First Name:</form:label>
             <form:input path="firstName" class="form-control" placeholder="First Name"/>
@@ -62,7 +62,7 @@
                     <td>${user.getEmail()}</td>
                     <td>${user.getRole()}</td>
                     <td>
-                        <form:form action="delete/${user.getId()}" method="post">
+                        <form:form action="/users/delete/${user.getId()}" method="post">
                             <input type="submit" class="btn btn-danger" value="Delete">
                         </form:form>
                     </td>
