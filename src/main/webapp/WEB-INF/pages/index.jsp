@@ -28,7 +28,8 @@
 
 <script>
     $(document).ready(function(){
-       reloadAdverts();
+        reloadAdverts();
+        window.setInterval(reloadAdverts, 5000);
     });
 
     /**
