@@ -12,4 +12,9 @@ public class MainController {
     public String index(ModelMap model) {
         return "index";
     }
+
+    @RequestMapping(value = "/about", method = RequestMethod.GET)
+    public String about(ModelMap model) {
+        return "about";
+    }
 }
