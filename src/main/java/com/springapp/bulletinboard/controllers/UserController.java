@@ -45,12 +45,12 @@ public class UserController {
     @RequestMapping(value = "/users/add", method = RequestMethod.POST)
     public String addUser(@ModelAttribute("user") User user, BindingResult result) {
         userService.save(user);
-        return "users";
+        return "redirect:/users";
     }
 
     @RequestMapping("/users/delete/{userId}")
     public String deleteUser(@PathVariable("userId") Long userId) {
         userService.delete(userId);
-        return "users";
+        return "redirect:/users";
     }
 }

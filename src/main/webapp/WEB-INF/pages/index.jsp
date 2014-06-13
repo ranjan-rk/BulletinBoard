@@ -17,6 +17,7 @@
         <tr>
             <th>Title</th>
             <th>Text</th>
+            <th>User</th>
             <th>Datetime</th>
         </tr>
         </thead>
@@ -42,6 +43,7 @@
                 var row = $("<tr></tr>");
                 row.append($("<td></td>").text(val.title));
                 row.append($("<td></td>").text(val.text));
+                row.append($("<td></td>").text(val.userName));
                 row.append($("<td></td>").text(val.timeStamp));
                 adverts.push(row);
             });
