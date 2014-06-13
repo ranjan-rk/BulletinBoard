@@ -11,11 +11,13 @@
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="http://getbootstrap.com/dist/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
+
+<c:import url="navbar.jsp" />
+
 <div class="container">
     <h1>Users</h1>
     <form:form method="post" action="add" commandName="user" role="form">
